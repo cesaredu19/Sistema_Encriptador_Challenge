@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'); /* Importa la fuente Inter */
+
+.information_title {
+    font-family: 'Inter', sans-serif;
+    color: #122c5a;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 20px;
+    background-color: #c7cdff;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espacio entre los cajetines */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples filas */
+    margin-bottom: 20px;
+}
+
+/* Ajustes generales para textarea */
+textarea {
+    width: 100%; /* Ajusta el ancho del textarea al contenedor */
+    height: 200px; /* Altura del textarea */
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    background-color: #c7cdff;
+    font-size: 16px;
+}
+
+/* Estilos para el textarea de entrada */
+#inputText {
+    width: 1000px; /* Ancho inicial del textarea de entrada */
+    height: 944px; /* Altura inicial del textarea de entrada */
+    color: #122c5a;
+}
+
+/* Estilos para el cajetín de salida */
+#output-container {
+    width: 400px; /* Ancho inicial del cajetín de salida */
+    height: 944px; /* Altura inicial del cajetín de salida */
+    position: relative;
+    border: 1px solid #ccc;
+    background-color: white;
+    min-height: 200px; /* Asegura que la altura coincida con el textarea */
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 32px;
+    overflow: hidden; /* Evita que el contenido se desborde */
+}
+
+/* Estilos para el contenedor del output */
+#output {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    color: black;
+    background-size: contain; /* Ajusta el tamaño de la imagen para que se ajuste al área sin recortarse */
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Estilos para el botón de copiar */
+#copyButton {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    cursor: pointer;
+    max-width: 90%; /* Limita el ancho máximo del botón al 90% del contenedor */
+    box-sizing: border-box;
+    white-space: nowrap; /* Evita que el texto dentro del botón se rompa en varias líneas */
+    font-size: 1rem; /* Tamaño de fuente inicial */
+    transition: font-size 0.3s, padding 0.3s; /* Transiciones suaves para los cambios de tamaño */
+    z-index: 2; /* Asegura que el botón esté encima del contenido */
+}
+
+
+#output.has-message {
+    padding-top: 40px; /* Espacio para el botón de copiar */
+    font-family: 'Inter', sans-serif;
+    background-image: none;
+}
+
+
+#output.no-message {
+    background-image: url('Imagen_no_text.png'); /* Ruta a la imagen */
+    background-size: contain; /* Ajusta el tamaño de la imagen para que se ajuste al área sin recortarse */
+    background-position: center;
+    background-repeat: no-repeat;
+    color: transparent; /* Oculta el texto para mostrar solo la imagen */
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Permite que los botones se ajusten en múltiples filas */
+}
+
+.button_personal_1,
+.button_personal_2 {
+    font-family: 'Inter', sans-serif;
+    border: 2px solid #122c5a;
+    border-radius: 10px;
+    width: 328px; /* Ancho máximo del botón */
+    height: 67px; /* Altura máxima del botón */
+    box-sizing: border-box; /* Incluye padding y border en el ancho y alto */
+    margin-bottom: 10px;
+}
+
+.button_personal_1 {
+    background-color: #122c5a;
+    color: white;
+}
+
+.button_personal_2 {
+    color: #122c5a;
+}
+
+/* Estilos generales para los botones */
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    border: 2px solid #122c5a;
+    color: #122c5a;
+    border-radius: 10px;
+    width: 328px; /* Ancho máximo del botón */
+    height: 67px; /* Altura máxima del botón */
+    box-sizing: border-box; 
+    margin-bottom: 10px;
+}
+
+/* Media Query para pantallas de hasta 1000px */
+@media (max-width: 1000px) {
+    #inputText {
+        width: 80%; 
+    }
+
+    #output-container {
+        width: 80%; 
+    }
+}
+
+/* Media Query para pantallas de hasta 800px */
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    #inputText {
+        width: 100%; 
+        height: 400px; 
+    }
+
+    #output-container {
+        width: 100%; 
+        height: 400px; 
+    }
+
+    #copyButton {
+        font-size: 0.9rem; 
+        padding: 4px 8px; 
+    }
+}
+
+/* Media Query para pantallas de hasta 700px */
+@media (max-width: 700px) {
+    #copyButton {
+        font-size: 0.8rem; 
+        padding: 4px 8px; 
+    }
+
+    textarea {
+        font-size: 14px; 
+    }
+
+    button {
+        width: 328px;
+        height: 67px;
+        padding: 8px 10px;
+        font-size: 0.8rem; 
+    }
+}
+
+/* Media Query para pantallas de hasta 500px */
+@media (max-width: 500px) {
+    button {
+        font-size: 0.7rem; 
+    }
+}
